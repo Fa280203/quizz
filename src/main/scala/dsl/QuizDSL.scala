@@ -25,6 +25,10 @@ class QuestionBuilder(
 }
 
 object QuizDSL {
-  def quiz(block: QuizBuilder => QuizBuilder): Quiz =
-    block(new QuizBuilder()).build()
+  def quiz(block: QuizBuilder => QuizBuilder): Quiz = {
+    val builder = block(new QuizBuilder())
+    builder.build()
+  }
 }
+
+
