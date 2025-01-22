@@ -1,6 +1,6 @@
 # Projet Scala : Création d'un DSL pour un Quiz
 
-Bienvenue dans notre projet Scala. Ce projet met en place un DSL (Domain-Specific Language) permettant de définir des quiz de manière intuitive. Voici comment nous avons organisé le projet et les étapes à suivre pour l'utiliser.
+Bienvenue dans notre projet de quiz créé en Scala. Ce projet met en place un DSL (Domain-Specific Language) permettant de définir des quiz de manière intuitive. Voici comment nous avons organisé le projet et les étapes à suivre pour l'utiliser.
 
 ## Fonctionnalités
 
@@ -117,5 +117,11 @@ sbt test
 - Améliorer la gestion des erreurs.
 - Intégrer une interface utilisateur pour créer des quiz plus facilement.
 
+## Pourquoi ce projet ?
 
+Créer un DSL pour les quiz est intéressant car les quiz sont largement utilisés dans l'éducation, les évaluations professionnelles et les jeux. Voici ce que nous voulions accomplir :
+
+- **Simplifier la création de quiz** : Offrir une syntaxe simple et intuitive pour que tout le monde puisse créer des quiz rapidement.
+- **Faciliter la validation** : Aider à éviter les erreurs en vérifiant que chaque question a une réponse correcte.
+- **Partager les quiz facilement** : Grâce à l'export JSON, les quiz peuvent être réutilisés ou intégrés dans d'autres systèmes.
 
