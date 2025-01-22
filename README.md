@@ -65,22 +65,22 @@ Pour vérifier que tout fonctionne comme prévu :
 sbt test
 ```
 
-## Exemples
+## Exemples d'utilisation
 
 ### Création d'un quiz
 
-Voici à quoi ressemble un quiz avec notre DSL :
+Voici comment créer un quiz avec notre DSL :
 
 ```scala
 val myQuiz = quiz { q =>
-  q.question("What is the capital of France?", QuestionType.MultipleChoice, Difficulty.Easy) { a =>
+  q.question("Quelle est la capitale de la France ?", QuestionType.MultipleChoice, Difficulty.Easy) { a =>
       a.answer("Paris", correct = true)
-        .answer("London")
+        .answer("Londres")
         .build()
     }
-    .question("Which planet is known as the Red Planet?", QuestionType.MultipleChoice, Difficulty.Medium) { a =>
+    .question("Quelle planète est connue comme la planète rouge ?", QuestionType.MultipleChoice, Difficulty.Medium) { a =>
       a.answer("Mars", correct = true)
-        .answer("Earth")
+        .answer("Terre")
         .answer("Jupiter")
         .build()
     }
@@ -89,12 +89,20 @@ val myQuiz = quiz { q =>
 
 ### Exporter en JSON
 
-Pour convertir un quiz en JSON :
+Pour convertir un quiz en JSON et le partager :
 
 ```scala
 val json = QuizExporter.exportToJson(myQuiz)
 println(json)
 ```
+
+Ces exemples montrent comment utiliser facilement notre DSL pour créer et exporter des quiz.
+
+## Choix de conception
+
+- **Immutabilité** : Nous avons utilisé des `case classes` pour garantir que les objets comme `Quiz`, `Question` et `Answer` soient immuables. Cela évite les erreurs liées à des modifications imprévues.
+- **Fonctions pures** : Les fonctions, comme celles utilisées pour valider ou exporter les quiz, n'ont pas d'effets de bord. Cela améliore la fiabilité et facilite les tests.
+- **Simplicité d'utilisation** : La syntaxe est conçue pour être claire et intuitive, même pour les utilisateurs qui ne sont pas experts en programmation.
 
 ## Tests unitaires
 
